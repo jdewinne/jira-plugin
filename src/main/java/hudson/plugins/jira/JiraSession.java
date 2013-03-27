@@ -12,6 +12,7 @@ import hudson.plugins.jira.soap.RemoteProjectRole;
 import hudson.plugins.jira.soap.RemoteStatus;
 import hudson.plugins.jira.soap.RemoteValidationException;
 import hudson.plugins.jira.soap.RemoteVersion;
+import org.apache.commons.lang.StringEscapeUtils;
 
 import java.rmi.RemoteException;
 import java.util.HashMap;
@@ -136,7 +137,7 @@ public class JiraSession {
 	 */
 	public RemoteIssue[] getIssuesFromJqlSearch(final String jqlSearch)
 			throws RemoteException {
-		return service.getIssuesFromJqlSearch(token, jqlSearch, 50);
+        return service.getIssuesFromJqlSearch(token, jqlSearch, 50);
 	}
 
 	/**
